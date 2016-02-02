@@ -1,4 +1,7 @@
 <?php
+	namespace AbstractFactory;
+    use AbstractFactory\Message;
+
 	class XMLMessage extends Message {
 		public function __construct($content) {
 			parent::__construct($content);

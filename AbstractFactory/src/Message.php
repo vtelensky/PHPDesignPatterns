@@ -1,4 +1,6 @@
 <?php
+    namespace AbstractFactory;
+    
     abstract class Message {
         protected $content = "";
         protected $receivers = array();

@@ -1,4 +1,6 @@
 <?php
+    namespace AbstractFactory;
+
     class MessagePrinter {
         protected $messageFactory = "";
         

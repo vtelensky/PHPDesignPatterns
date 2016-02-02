@@ -1,9 +1,9 @@
 <?php
-    # simple autoload just for demonstration
-    function __autoload($classname) {
-        $filename = __DIR__ . DIRECTORY_SEPARATOR . $classname . ".php";
-        include_once($filename);
-    }
+    include "vendor/autoload.php";
+    
+    use AbstractFactory\JSONMessageFactory;
+    use AbstractFactory\MessagePrinter;
+    use AbstractFactory\XMLMessageFactory;
     
     $data = array( 'sender' => array('name' => 'Jan', 'surname' => 'Novak', 'machine' => 'pc1'),
                    'receivers' => array(array('name' => 'George', 'surname' => 'Lucas', 'machine' => 'pc2'),

@@ -1,4 +1,7 @@
 <?php
+    namespace AbstractFactory;
+    use AbstractFactory\Message;
+    
     class JSONMessage extends Message {
         
         public function __construct($content) {

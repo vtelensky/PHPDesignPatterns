@@ -1,4 +1,7 @@
 <?php
+    namespace AbstractFactory;
+    use AbstractFactory\Person;
+    
     class JSONPerson extends Person {
         
         public function __construct($name, $surname, $machine) {

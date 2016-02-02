@@ -1,4 +1,6 @@
 <?php
+    namespace AbstractFactory;
+
     abstract class Person {
         protected $name = "";
         protected $surname = "";

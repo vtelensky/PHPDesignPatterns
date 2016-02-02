@@ -1,4 +1,7 @@
 <?php
+    namespace AbstractFactory;
+    use AbstractFactory\MessageFactory;
+
     class JSONMessageFactory implements MessageFactory {
         
         public function createReceiver($name, $surname, $machine) {
