@@ -10,6 +10,9 @@ class JSONPerson
         parent::__construct($name, $surname, $machine);
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         $string = ' "name" : "' . $this->getName() . '",' . ' "surname" : "' . $this->getSurname() . '",'
@@ -18,6 +21,3 @@ class JSONPerson
         return $string;
     }
 }
-
-
-?>

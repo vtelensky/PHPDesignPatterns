@@ -10,11 +10,17 @@ class MessagePrinter
         $this->messageFactory = $messageFactory;
     }
 
+    /**
+     * @param MessageFactory $messageFactory
+     */
     public function setMessageFactory(MessageFactory $messageFactory)
     {
         $this->messageFactory = $messageFactory;
     }
 
+    /**
+     * @param $data
+     */
     public function printMessage($data)
     {
         $receivers = array();
@@ -53,6 +59,3 @@ class MessagePrinter
         echo $message . PHP_EOL;
     }
 }
-
-
-?>

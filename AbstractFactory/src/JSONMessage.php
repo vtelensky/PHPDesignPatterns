@@ -10,6 +10,9 @@ class JSONMessage
         parent::__construct($content);
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         $string = '{ ';
@@ -27,6 +30,3 @@ class JSONMessage
         return $string;
     }
 }
-
-
-?>

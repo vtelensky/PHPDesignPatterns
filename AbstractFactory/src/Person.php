@@ -14,31 +14,49 @@ abstract class Person
         $this->machine = $machine;
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return $this->name;
     }
 
+    /**
+     * @param $name
+     */
     public function setName($name)
     {
         $this->name = $name;
     }
 
+    /**
+     * @return string
+     */
     public function getSurname()
     {
         return $this->surname;
     }
 
+    /**
+     * @param $surname
+     */
     public function setSurname($surname)
     {
         $this->surname = $surname;
     }
 
+    /**
+     * @return string
+     */
     public function getMachine()
     {
         return $this->machine;
     }
 
+    /**
+     * @param $machine
+     */
     public function setMachine($machine)
     {
         $this->machine = $machine;
@@ -46,6 +64,3 @@ abstract class Person
 
     public abstract function __toString();
 }
-
-
-?>

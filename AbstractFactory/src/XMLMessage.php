@@ -9,6 +9,9 @@ class XMLMessage
         parent::__construct($content);
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         $string = '<?xml version="1.0"?>';
@@ -27,6 +30,3 @@ class XMLMessage
         return $string;
     }
 }
-
-
-?>

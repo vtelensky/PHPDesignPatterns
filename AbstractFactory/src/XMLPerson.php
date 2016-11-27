@@ -9,6 +9,9 @@ class XMLPerson
         parent::__construct($name, $surname, $machine);
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         $string = '<name>' . $this->getName() . '</name>' . '<surname>' . $this->getSurname() . '</surname>'
@@ -17,6 +20,3 @@ class XMLPerson
         return $string;
     }
 }
-
-
-?>
