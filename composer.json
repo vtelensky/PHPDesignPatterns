@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "AbstractFactory\\": "AbstractFactory/src/",
+      "Strategy\\": "Strategy/src/"
+    }
+  }
+}
