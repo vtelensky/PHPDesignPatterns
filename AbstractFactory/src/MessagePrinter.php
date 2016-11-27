@@ -50,7 +50,7 @@ class MessagePrinter
             $message->addReceiver($receiver);
         }
 
-        echo $message;
+        echo $message . PHP_EOL;
     }
 }
 
