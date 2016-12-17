@@ -2,7 +2,8 @@
   "autoload": {
     "psr-4": {
       "AbstractFactory\\": "AbstractFactory/src/",
-      "Strategy\\": "Strategy/src/"
+      "Strategy\\": "Strategy/src/",
+      "Singleton\\": "Singleton/src/"
     }
   }
 }
