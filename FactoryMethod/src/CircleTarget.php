@@ -43,6 +43,10 @@ implements Target
      */
     public function isHit($x, $y)
     {
-        return true;
+        if ((pow($x - $this->x, 2) + pow($y - $this->y, 2)) <= pow($this->r, 2)) {
+            return true;
+        }
+
+        return false;
     }
 }

@@ -39,6 +39,12 @@ implements Target
      */
     public function isHit($x, $y)
     {
-        return true;
+        if (($x >= $this->x && $x <= $this->x + $this->sideLength)
+            && ($y >= $this->y && $y <= $this->y + $this->sideLength)
+        ) {
+            return true;
+        }
+
+        return false;
     }
 }

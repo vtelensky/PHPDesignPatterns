@@ -12,9 +12,9 @@ abstract class ShapeTargetShooter
         $target = $this->createDefaultSizeInstance();
 
         if ($target->isHit($x, $y)) {
-            echo "Target hit\n";
+            echo (new \ReflectionClass($target))->getShortName() . " hit\n";
         } else {
-            echo "Target missed\n";
+            echo (new \ReflectionClass($target))->getShortName() . " missed\n";
         }
     }
 
