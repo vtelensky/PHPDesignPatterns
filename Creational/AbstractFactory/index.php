@@ -21,4 +21,3 @@ echo "\n\n";
 $messageFactory = new \Creational\AbstractFactory\XMLMessageFactory();
 $messagePrinter->setMessageFactory($messageFactory);
 $messagePrinter->printMessage($data);
-?>
