@@ -9,7 +9,7 @@ interface Cipher
      *
      * @return mixed
      */
-    public function crypt($message, $key);
+    public function crypt($message, $key = null);
 
     /**
      * @param $message
@@ -17,5 +17,5 @@ interface Cipher
      *
      * @return mixed
      */
-    public function decrypt($message, $key);
+    public function decrypt($message, $key = null);
 }

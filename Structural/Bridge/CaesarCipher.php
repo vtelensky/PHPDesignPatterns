@@ -5,8 +5,11 @@ class CaesarCipher
 implements Cipher
 {
 
-    public function crypt($message, $key)
+    public function crypt($message, $key = null)
     {
+        if (empty($key) or !is_numeric($key)) {
+            throw new \Exception('Key for cipher not provided in ' . __METHOD__);
+        }
         $result = "";
 
         foreach (str_split($message) as $character) {
@@ -18,15 +21,20 @@ implements Cipher
 
     private function shiftCharacter($char, $key)
     {
-        if (!ctype_alpha($char))
+        if (!ctype_alpha($char)) {
             return $char;
+        }
 
         $offset = ord(ctype_upper($char) ? 'A' : 'a');
         return chr((((ord($char) + $key) - $offset) % 26) + $offset);
     }
 
-    public function decrypt($message, $key)
+    public function decrypt($message, $key = null)
     {
+        if (empty($key) or !is_numeric($key)) {
+            throw new \Exception('Key for cipher not provided in ' . __METHOD__);
+        }
+
         $result = "";
 
         foreach (str_split($message) as $character) {
