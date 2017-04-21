@@ -5,15 +5,44 @@ class CaesarCipher
 implements Cipher
 {
 
+    /**
+     * @param $message
+     * @param null $key
+     *
+     * @return string
+     * @throws \Exception
+     */
     public function crypt($message, $key = null)
     {
         if (empty($key) or !is_numeric($key)) {
-            throw new \Exception('Key for cipher not provided in ' . __METHOD__);
+            throw new \Exception("Key for cipher not provided in " . __METHOD__);
         }
         $result = "";
 
         foreach (str_split($message) as $character) {
             $result .= $this->shiftCharacter($character, $key);
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param $message
+     * @param null $key
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function decrypt($message, $key = null)
+    {
+        if (empty($key) or !is_numeric($key)) {
+            throw new \Exception("Key for cipher not provided in " . __METHOD__);
+        }
+
+        $result = "";
+
+        foreach (str_split($message) as $character) {
+            $result .= $this->shiftCharacter($character, 26 - $key);
         }
 
         return $result;
@@ -25,22 +54,7 @@ implements Cipher
             return $char;
         }
 
-        $offset = ord(ctype_upper($char) ? 'A' : 'a');
+        $offset = ord(ctype_upper($char) ? "A" : "a");
         return chr((((ord($char) + $key) - $offset) % 26) + $offset);
-    }
-
-    public function decrypt($message, $key = null)
-    {
-        if (empty($key) or !is_numeric($key)) {
-            throw new \Exception('Key for cipher not provided in ' . __METHOD__);
-        }
-
-        $result = "";
-
-        foreach (str_split($message) as $character) {
-            $result .= $this->shiftCharacter($character, 26 - $key);
-        }
-
-        return $result;
     }
 }

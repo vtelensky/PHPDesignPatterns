@@ -1,12 +1,9 @@
 <?php
 namespace Structural\Bridge;
 
-class SimpleSubstitutionCipher
+class AsciiSubstitutionCipher
 implements Cipher
 {
-
-    //ToDo: Implement SimpleSubstitution algorithm
-    private $dictionary = array();
 
     /**
      * @param $message
@@ -16,7 +13,11 @@ implements Cipher
      */
     public function crypt($message, $key = null)
     {
-        // TODO: Implement crypt() method.
+        $result = "";
+        for ($i = 0; $i < strlen($message); $i++) {
+            $result .= ord($message[$i]) . " ";
+        }
+        return trim($result);
     }
 
     /**
@@ -27,6 +28,10 @@ implements Cipher
      */
     public function decrypt($message, $key = null)
     {
-        // TODO: Implement decrypt() method.
+        $result = "";
+        foreach (preg_split("/ /", $message) as $character) {
+            $result .= chr($character);
+        }
+        return $result;
     }
 }

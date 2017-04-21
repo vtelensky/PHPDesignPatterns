@@ -24,8 +24,6 @@ abstract class AbstractCommunicator
         echo "Sending message: " . $message . "\n";
     }
 
-    //ToDo: Think about and create some method which are common for all communicators
-
-    public abstract function cryptMessage($message, $key);
-    public abstract function decryptMessage($message, $key);
+    public abstract function cryptMessage($message, $key = null);
+    public abstract function decryptMessage($message, $key = null);
 }

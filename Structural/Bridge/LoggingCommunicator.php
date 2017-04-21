@@ -1,7 +1,7 @@
 <?php
 namespace Structural\Bridge;
 
-class Communicator
+class LoggingCommunicator
 extends AbstractCommunicator
 {
     /**
@@ -18,8 +18,9 @@ extends AbstractCommunicator
      *
      * @return mixed
      */
-    public function cryptMessage($message, $key)
+    public function cryptMessage($message, $key = null)
     {
+        $this->logMessage("Crypt ---> message: " . $message . " , key: " . $key);
         return $this->cipher->crypt($message, $key);
     }
 
@@ -29,8 +30,14 @@ extends AbstractCommunicator
      *
      * @return mixed
      */
-    public function decryptMessage($message, $key)
+    public function decryptMessage($message, $key = null)
     {
+        $this->logMessage("Decrypt ---> message: " . $message . " , key: " . $key);
         return $this->cipher->decrypt($message, $key);
+    }
+
+    private function logMessage($message)
+    {
+        echo $message;
     }
 }
