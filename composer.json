@@ -1,4 +1,18 @@
 {
+  "name": "D3ryk/PHPDesignPatterns",
+  "description": "Examples of various design patterns implemented in PHP",
+  "version": "0.0.1-dev",
+  "time": "2017-05-06",
+  "license": "MIT",
+
+  "authors": [
+    {
+      "name": "Vaclav Telensky",
+      "email": "vaclav.telensky@seznam.cz",
+      "role": "Developer"
+    }
+  ],
+
   "autoload": {
     "psr-4": {
       "Creational\\": "Creational/",
